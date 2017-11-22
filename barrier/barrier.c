@@ -1,23 +1,23 @@
 #include <linux/kernel.h>
 
 
-typedef struct barrier{
-	unsigned int barrier_id;
-	unsigned int count;
-	signed int timeout;
-	spinlock_t lock_barrier;
-	struct semaphore sem_barrier;
-	struct mutex mutex_barrier;
-	struct list_head list_barrier;
-	pid_t tgid;
-}barrier_t;
+// typedef struct barrier{
+// 	unsigned int barrier_id;
+// 	unsigned int count;
+// 	signed int timeout;
+// 	spinlock_t lock_barrier;
+// 	struct semaphore sem_barrier;
+// 	struct mutex mutex_barrier;
+// 	struct list_head list_barrier;
+// 	pid_t tgid;
+// }barrier_t;
 
-LIST_HEAD(barrier_list_global);
+// LIST_HEAD(barrier_list_global);
 
-unsigned int barrier_id_global = 0;
+// unsigned int barrier_id_global = 0;
 
-DEFINE_SPINLOCK(global_lock_barrier);
-DEFINE_SPINLOCK(global_lock_barrier_id);
+// DEFINE_SPINLOCK(global_lock_barrier);
+// DEFINE_SPINLOCK(global_lock_barrier_id);
 
 asmlinkage long sys_barrier_init(unsigned int count, unsigned int *barrier_id, signed int timeout)
 {
