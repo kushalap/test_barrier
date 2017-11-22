@@ -882,4 +882,7 @@ asmlinkage long sys_execveat(int dfd, const char __user *filename,
 			const char __user *const __user *argv,
 			const char __user *const __user *envp, int flags);
 
+asmlinkage long sys_barrier_init(unsigned int count, unsigned int* barrier_id, signed int timeout);
+asmlinkage long sys_barrier_wait(unsigned int barrier_id);
+asmlinkage long sys_barrier_destroy(unsigned int barrier_id);
 #endif
